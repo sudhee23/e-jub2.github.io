@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>E-Jublient</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets\img\e-logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+ <!-- Font Awesome -->
+ <link
+ rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+<!-- Google Font -->
+<link
+ href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+ rel="stylesheet"
+/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
+
+    <!-- pre loader -->
+    <link rel="stylesheet" href="assets\css\preloader.css">
+
+  
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/anim.css" rel="stylesheet">
+  <link href="assets/css/indexstars.css" rel="stylesheet">
+
+
+  <!-- bootstrap icons cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+</head>
+<style>
+  #header{
+    width: 100%;
+  }
+  .card1{
+    width: 300px;
+    height: 350px;
+  }
+  .contact-ImgBx{
+          width: 120px;
+          height:120px;
+          position: relative;
+          margin-top:20px;
+          border-radius:50%;
+          overflow:hidden;
+        }
+        .contact-ImgBx img{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index:-1;
+        }
+        .iconsBox{
+          width: 100%;
+          height:0%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: black;
+          opacity: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          transition: .1s linear;
+          transition-duration: .1s;
+          z-index:5;
+          background-color:black;
+        }
+        .team-card:hover .iconsBox{
+          opacity: 0.5;
+          height:100%;
+        }
+        .contact-ImgBx .iconsBox a i{
+          opacity:0;
+          transition-duration:.5s;
+          color:aqua;
+          font-size:0px;          
+        }
+        .contact-ImgBx .iconsBox a{
+          transition-duration:.5s;
+          transform:translateY(30px);
+        }
+        
+        .team-card:hover .iconsBox  a i{
+          opacity:1;
+          font-size:20px;
+        }
+        
+        .team-card:hover .iconsBox a:nth-child(1){transform:translateY(0px);transition-delay:0s;}
+        .team-card:hover .iconsBox a:nth-child(2){transform:translateY(0px);transition-delay:0.2s;}
+        .team-card:hover .iconsBox a:nth-child(3){transform:translateY(0px);transition-delay:0.4s;}
+        .team-card:hover .iconsBox a:nth-child(4){transform:translateY(0px);transition-delay:0.6s;}
+        
+        .contact-ImgBx img{
+          z-index:0;
+        }
+        .contact-card .contact-content{
+          width: 80%;
+          height:30%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .team-card .contact-content div{
+          margin:0px 10px;
+        }
+        .team-card .contact-content .contact-Name{
+          font-size: 17px;
+          text-align:center;
+          font-weight: 700;
+        }
+        .team-card .contact-content .contact-mail{
+          font-size: 15px;
+        }
+        .team-card .contact-content .contact-no{
+          font-size: 15px;
+        }
+
+
+
+</style>
+<body>
+<!-- 
+   ====pre loader======= 
+  <section class="preloader">
+    <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
+      <defs>
+        <clipPath id="pencil-eraser">
+          <rect height="30" width="30" ry="5" rx="5"></rect>
+        </clipPath>
+      </defs>
+      <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82" stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70" class="pencil__stroke"></circle>
+      <g transform="translate(100,100)" class="pencil__rotate">
+        <g fill="none">
+          <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="hsl(223,90%,50%)" r="64" class="pencil__body1"></circle>
+          <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="hsl(223,90%,60%)" r="74" class="pencil__body2"></circle>
+          <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="hsl(223,90%,40%)" r="54" class="pencil__body3"></circle>
+        </g>
+        <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
+          <g class="pencil__eraser-skew">
+            <rect height="30" width="30" ry="5" rx="5" fill="hsl(223,90%,70%)"></rect>
+            <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(223,90%,60%)"></rect>
+            <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
+            <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
+            <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
+            <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
+            <rect height="2" width="30" y="13" fill="hsla(223,10%,10%,0.2)"></rect>
+          </g>
+        </g>
+        <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
+          <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
+          <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
+          <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
+        </g>
+      </g>
+    </svg>
+</section> -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center" style="justify-content: space-between;">
+      <div id="logo" class="me-auto">
+        <a href="index1.html" class="scrollto mx-2"><img src="assets\img\e-logo.png" alt="" title="" ></a>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0 px-3">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">
+            <button class="button-71 mx-3" role="button">Home</button>
+          </a></li>
+          <li><a class="nav-link scrollto" href="#about">
+            <button class="button-71 mx-3" role="button">About</button>
+          </a></li>
+          <li class="dropdown"><a href="#events" class="nav-link scrollto">
+            <button class="button-71 mx-3" role="button">events</button>
+          </a></li>
+          <li><a class="nav-link scrollto" href="#webteam">
+            <button class="button-71 mx-3" role="button">WebTeam</button>
+          </a></li>
+          <li><a class="nav-link scrollto" href="#team">
+            <button class="button-71 mx-3" role="button">Team</button>
+
+          </a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+  </header>
+  <!-- End Header -->
+
+<style>
+  section.home{
+    width: 100%;
+    height: 100vh;
+  }
+</style>
+      <div class="background-container-events">
+        <div class="parallax">
+            <section class="wrapper">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+            </section>
+        </div>
+      </div>
+  <main id="main">
+    <!-- ====main section====== -->
+    <section class="home d-flex flex-column">
+      <!-- <img src="assets\img\NEWlogo(Original).png" alt=""  class="e-logo">  -->
+      <div style="position: relative; width: 100%; height: 0; padding-top: 66.6667%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;" class="e-logo">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFgndrT0Ow&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFgndrT0Ow&#x2F;view?utm_content=DAFgndrT0Ow&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">E-JUBLIANT'23</a> by Tanmayi Kona
+      <section class="time" style="z-index:1">
+        <div class="" id="time">
+          <div class="circle" style="--clr:#3efefe;">
+          <div class="dots day_dot"></div> 
+           <svg view="0 0 90 90"> 
+            <circle cx="30" cy="30" r="30" ></circle>
+            <circle cx="30" cy="30" r="30" id="dd" ></circle>
+          </svg>
+          <div class="" ><i id="days">00</i><br><span>Days</span></div>
+        </div>
+  
+        <div class="circle" style="--clr:#3efefe;">
+          <div class="dots hr_dot"></div> 
+           <svg view="0 0 90 90"> 
+            <circle cx="30" cy="30" r="30" ></circle>
+            <circle cx="30" cy="30" r="30" id="hh" ></circle>
+          </svg>
+          <div class="" ><i id="hours">00</i><br><span>Hours</span></div>
+        </div>
+  
+        <div class="circle" style="--clr:#3efefe;">
+          <div class="dots min_dot"></div> 
+           <svg view="0 0 90 90"> 
+            <circle cx="30" cy="30" r="30" ></circle>
+            <circle cx="30" cy="30" r="30" id="mm" ></circle>
+          </svg>
+          <div class="" ><i id="minutes">00</i><br><span>Minutes</span></div>
+        </div>
+  
+        <div class="circle" style="--clr:#3efefe;">
+          <div class="dots sec_dot"></div> 
+           <svg view="0 0 90 90"> 
+            <circle cx="30" cy="30" r="30" ></circle>
+            <circle cx="30" cy="30" r="30" id="ss" ></circle>
+          </svg>
+          <div class="" ><i id="seconds">00</i><br><span>Seconds</span></div>
+        </div>
+  
+  
+        </div>
+      </section>
+      <script>
+        // timer script
+
+        let days= document.getElementById("days");
+        let hours= document.getElementById("hours");
+        let minutes= document.getElementById("minutes");
+        let seconds= document.getElementById("seconds");
+
+        let dd=document.getElementById("dd");
+        let hh=document.getElementById("hh");
+        let mm=document.getElementById("mm");
+        let ss=document.getElementById("ss");
+
+        let day_dot=document.querySelector('.day_dot');
+        let hr_dot=document.querySelector('.hr_dot');
+        let min_dot=document.querySelector('.min_dot');
+        let sec_dot=document.querySelector('.sec_dot');
+
+        let endDate='04/24/2023 00:00:00' ;
+
+        let x =setInterval(function(){
+          let dest= new Date("apr 24, 2023 16:00:00")
+          let now=new Date().getTime();
+          let distance= dest - now ;
+
+         
+
+          let day=Math.floor(distance/(1000*60*60*24))
+          
+          days.innerHTML=day
+
+          let hour=Math.floor((distance % (1000*60*60*24))/(1000*60*60))
+
+          hours.innerHTML=hour
+
+          let minute=Math.floor((distance % (1000*60*60))/(1000*60))
+          
+          minutes.innerHTML=minute
+
+          let second=Math.floor((distance % (1000*60))/(1000))
+
+          seconds.innerHTML=second
+
+
+
+          
+
+
+
+        });
+
+      </script>
+    </section>
+
+    <!-- ======= About Section ======= -->
+    
+    <section class="swiper-set about-content" id="about">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper-body d-flex justify-content-around align-items-center px-2">
+              <img src="https://rguktn.ac.in/assets_new/gallery/c.jpg" alt="" width="100%" height="100%">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-body d-flex justify-content-around align-items-center px-2">
+              <img src="https://rguktn.ac.in/assets_new/gallery/10.jpg" alt="" width="100%" height="100%">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-body d-flex justify-content-around align-items-center px-2">
+              <img src="data:image/jpeg;base64,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" alt="" width="100%" height="100%">
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="swiper-button-next "></div>
+        <div class="swiper-button-prev "></div>
+        <div class="swiper-pagination "></div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <style>
+      section.swiper-set{
+      width: 100%;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-body{
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    .swiper-slide.swiper-body  img {
+      display: block;
+      width:200px;
+      height:300px;
+      object-fit: cover;
+    }
+    
+    
+    .swiper-button-next:after, .swiper-button-prev:after{
+        border-radius: 50%;
+        padding: 10px 20px;
+    }
+    .swiper-pagination-bullet{
+      width: 8px;
+      height: 8px;
+      transition-duration: .4s;
+    }
+    .swiper-pagination-bullet-active{
+      width: 15px;
+      height: 15px;
+      margin-top: 5px;
+
+    }
+    @media (max-width:768px){
+      .swiper-button-next:after, .swiper-button-prev:after{
+        display: none;
+    }
+    }
+    </style>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <!-- End About Section -->
+
+    <!-- ======= Schedule Section ======= -->
+    <!-- End Schedule Section -->
+
+    <!-- =====events====== -->
+    <section id="events">
+        <div class="container-fluid">
+          <div class="section-header">
+            <h2>Events</h2>
+            <p>Event Venue location and gallery</p>
+          </div>
+          <div class="row d-flex  align-items-center flex-wrap" style="justify-content: space-around;">
+
+              <div class="card1 mt-5" style="height:400px;width:350px;color: black;">
+                <div class="">
+                  <div class="e-title h2 text-center pt-2 bold1  " style="color:black">Event</div>
+                  <div class="e-discription text-center pt-1 px-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatem ipsam quaerat ratione odio
+                     corr
+                  </div>
+                  <div class="e-time-heading bold1 mt-1 text-center ">Time</div>
+                  <div class="e-time text-center">07/05/2023 || 11:00 AM</div>
+                  <div class="e-venue-heading bold1 mt-1 text-center ">Venue</div>
+                  <div class="e-venue mt-1 text-center">AB-II GF-06</div>
+                  <div class="e-contact-heading mt-2 text-center bold1 text-center ">Contact</div>
+                  <div class="e-contact  text-center">Siddu || +91 93988 48215</div>
+                  <div class="reg-btn d-flex justify-content-end mt-5 align-items-center mt-1">
+                      <button class="button-71 mx-3" role="button">read more</button>
+                  </div>
+                </div>
+                <div class="cover ">
+                  <div class="coverFront">
+                    <div style="z-index:190">                      
+                      <div class="cbt text-white">
+                        Name of the event
+                      </div>
+                    </div>
+                  </div>
+                  <div class="coverBack">
+                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80" alt="" width="100%" height="100%" >
+  
+                  </div>
+                 
+                </div>
+              </div>
+
+              <div class="card1 " style="height:400px;width:350px">
+                <div class="">
+                  <div class="e-title h2 text-center pt-2 bold1 ">Event</div>
+                  <div class="e-discription text-center pt-1 px-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatem ipsam quaerat ratione odio
+                     corr
+                  </div>
+                  <div class="e-time-heading bold1 mt-1 text-center ">Time</div>
+                  <div class="e-time text-center">07/05/2023 || 11:00 AM</div>
+                  <div class="e-venue-heading bold1 mt-1 text-center ">Venue</div>
+                  <div class="e-venue mt-1 text-center">AB-II GF-06</div>
+                  <div class="e-contact-heading mt-2 text-center bold1 text-center ">Contact</div>
+                  <div class="e-contact  text-center">Siddu || +91 93988 48215</div>
+                  <div class="reg-btn d-flex justify-content-end mt-5 align-items-center mt-1">
+                      <button class="button-71 mx-3" role="button">read more</button>
+                  </div>
+                </div>
+                <div class="cover ">
+                  <div class="coverFront">
+                    <div style="z-index:190">                      
+                      <div class="cbt text-white">
+                        Name of the event
+                      </div>
+                    </div>
+                  </div>
+                  <div class="coverBack">
+                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80" alt="" width="100%" height="100%" >
+  
+                  </div>
+                 
+                </div>
+              </div>
+
+              <div class="card1 " style="height:400px;width:350px">
+                <div class="">
+                  <div class="e-title h2 text-center pt-2 bold1 ">Event</div>
+                  <div class="e-discription text-center pt-1 px-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatem ipsam quaerat ratione odio
+                     corr
+                  </div>
+                  <div class="e-time-heading bold1 mt-1 text-center ">Time</div>
+                  <div class="e-time text-center">07/05/2023 || 11:00 AM</div>
+                  <div class="e-venue-heading bold1 mt-1 text-center ">Venue</div>
+                  <div class="e-venue mt-1 text-center">AB-II GF-06</div>
+                  <div class="e-contact-heading mt-2 text-center bold1 text-center ">Contact</div>
+                  <div class="e-contact  text-center">Siddu || +91 93988 48215</div>
+                  <div class="reg-btn d-flex justify-content-end mt-5 align-items-center mt-1">
+                      <button class="button-71 mx-3" role="button">read more</button>
+                  </div>
+                </div>
+                <div class="cover ">
+                  <div class="coverFront">
+                    <div style="z-index:190">                      
+                      <div class="cbt text-white">
+                        Name of the event
+                      </div>
+                    </div>
+                  </div>
+                  <div class="coverBack">
+                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80" alt="" width="100%" height="100%" >
+  
+                  </div>
+                 
+                </div>
+              </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- ======= team ======= -->
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Team</h2>
+          <p>Team Members</p>
+        </div>
+
+        <div class="team-info flex-wrap d-flex align-items-center " style="justify-content:space-around">
+            
+            <div class="team-card d-flex flex-column justify-content-center align-items-center">
+              <div class="contact-ImgBx">
+                <div class="iconsBox">
+                   <a href="#"><i class="bi bi-linkedin"></i></a>
+                   <a href="#"><i class="bi bi-instagram"></i></a>
+                 </div>
+                 <img src="assets\img\siddhu.jpg" width="100%" height="100%">
+               </div>
+               <div class="contact-content">
+                 <div class="contact-Name h4 text-center  mt-1">Chandra Sai Sukala</div>
+                 <div class="contact-mail text-center  my-2">n180229@rguktn.ac.in</div>
+                 <div class="contact-no text-center  my-2">+91 93815 18809</div>
+               </div>
+            </div>
+
+            <div class="team-card d-flex flex-column justify-content-center align-items-center">
+              <div class="contact-ImgBx">
+                <div class="iconsBox">
+                   <a href="#"><i class="bi bi-linkedin"></i></a>
+                   <a href="#"><i class="bi bi-instagram"></i></a>
+                 </div>
+                 <img src="assets\img\siddhu.jpg" width="100%" height="100%">
+               </div>
+               <div class="contact-content">
+                 <div class="contact-Name h4 text-center  mt-1">Chandra Sai Sukala</div>
+                 <div class="contact-mail text-center  my-2">n180229@rguktn.ac.in</div>
+                 <div class="contact-no text-center  my-2">+91 93815 18809</div>
+               </div>
+            </div>
+
+            <div class="team-card d-flex flex-column justify-content-center align-items-center">
+              <div class="contact-ImgBx">
+                <div class="iconsBox">
+                   <a href="#"><i class="bi bi-linkedin"></i></a>
+                   <a href="#"><i class="bi bi-instagram"></i></a>
+                 </div>
+                 <img src="assets\img\siddhu.jpg" width="100%" height="100%">
+               </div>
+               <div class="contact-content">
+                 <div class="contact-Name h4 text-center  mt-1">Chandra Sai Sukala</div>
+                 <div class="contact-mail text-center  my-2">n180229@rguktn.ac.in</div>
+                 <div class="contact-no text-center  my-2">+91 93815 18809</div>
+               </div>
+            </div>
+
+            <div class="team-card d-flex flex-column justify-content-center align-items-center">
+              <div class="contact-ImgBx">
+                <div class="iconsBox">
+                   <a href="#"><i class="bi bi-linkedin"></i></a>
+                   <a href="#"><i class="bi bi-instagram"></i></a>
+                 </div>
+                 <img src="assets\img\siddhu.jpg" width="100%" height="100%">
+               </div>
+               <div class="contact-content">
+                 <div class="contact-Name h4 text-center  mt-1">Chandra Sai Sukala</div>
+                 <div class="contact-mail text-center  my-2">n180229@rguktn.ac.in</div>
+                 <div class="contact-no text-center  my-2">+91 93815 18809</div>
+               </div>
+            </div>
+
+        </div>
+
+        
+         
+      </div>
+
+    </section>
+
+    <!--End of team members-->
+          <!-- ========Web Team Section started -->
+
+
+
+          <section id="webteam" class="section-with-bg">
+
+            <div class="container" data-aos="fade-up">
+              <div class="section-header">
+                <h2>Web Team</h2>
+                <p>Her are some nearby hotels</p>
+              </div>
+                
+              <div class=" row  d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-4 d-flex align-items-center justify-content-center my-0">
+                  <div class="card2container">
+                    <div class="card2">
+                      <div class="imgBx">
+                        <img src="assets/img/siddhu.jpg" alt="" class="img-fluid"/>
+                      </div>
+                      <div class="content">
+                        <div class="contentBx">
+                          <h3 style="font-size:21px;">Siddartha yernagula<br/><span style="font-size:15px;margin-top:3px;" >Web Developer</span></h3>
+                        </div>
+                        <div class="icons" >
+                          <a href="#">
+                            <i class="fab fa-twitter" style="color:azure;font-size:15px;transition:0.5s;"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-linkedin" style="color:azure;font-size:15px"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-github" style="color:azure;font-size:15px"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fas fa-envelope" style="color:azure;font-size:15px"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+    
+              </div>
+            </div>
+      
+          </section>
+          <!-- ========Web Team Section  end-->
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info mx-auto">
+            <!-- <img src="assets/img/logo.png" alt="TheEvenet"> -->
+            <h3 class="footer-heading">E-Jubliant'23</h3>
+            <p>  The fiesta of english  merriment with various  ingenious and hilarious amusing events ......</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links mx-auto ">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">About </a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#events">Events</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#webteam">Web Team</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#team">Team</a></li>
+            </ul>
+          </div>
+
+         
+          <div class="col-lg-3 col-md-6 footer-contact mx-auto">
+            <h4>Contact Us</h4>
+            <p>
+              K.Krishna Kireeti<br>
+              E.C.E Emgeneering 1st year<br>
+              RGUKT Nuzvid <br>
+              <strong>Phone:</strong> +91 94948 42953<br>
+            </p>
+            <p>
+              M. Lohith<br>
+              C.S.E Emgeneering 1st year<br>
+              RGUKT Nuzvid <br>
+              <strong>Phone:</strong> +91 63046 93345<br>
+              <strong>Email:</strong> e-crush@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+      -->
+        Designed by <a href="https://bootstrapmade.com/">E-crush RGUKT</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"></a> -->
+  
+
+  
+  <script src="assets/js/main.js"></script>
+
+</body>
+<script>
+  const preLoader = document.querySelector(".preloader");
+  window.addEventListener("load",function(){
+    preLoader.style.display = "none";
+  })
+
+
+  
+
+</script>
+
+</html>
